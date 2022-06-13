@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,7 @@ public class frutinha : MonoBehaviour
     private CircleCollider2D circle;
 
     public GameObject collected;
+    public int Score;
 
     // Start is called before the first frame update
     void Start()
@@ -22,15 +23,17 @@ public class frutinha : MonoBehaviour
         
     }
      
-     void OnTriggerEnter2D(Collider2D collider)
-     {
-         if(collider.gameObject.tag == "Player")
-         {
-             sr.enabled = false;
-             circle.enabled = false;
-             collected.SetActive(true);
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "Player")
+        {
+            sr.enabled = false;
+            circle.enabled = false;
+            collected.SetActive(true);
 
-             Destroy(gameObject, 0.6f);
-         }
-     }
+            
+
+            Destroy(gameObject, 0.5f);
+        }
+    }
 }
