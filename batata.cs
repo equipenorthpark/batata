@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class batata : MonoBehaviour
 {
+    // Variavel para contolar a velocidade do personagem.
     public float Speed;
     public float JumpForce;
     
@@ -13,14 +14,14 @@ public class batata : MonoBehaviour
     private Rigidbody2D rig;
     private Animator anim;
 
-    // Start is called before the first frame update
+    // Chamado uma vez quando inicializa o jogo.
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    // Chamado a cada frame.
     void Update()
     {
         Move();
@@ -29,6 +30,7 @@ public class batata : MonoBehaviour
 
     void Move() 
     {
+        // Faz com que o personagem se movimente.
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f);
         transform.position += movement * Time. deltaTime * Speed;
 
@@ -50,6 +52,7 @@ public class batata : MonoBehaviour
 
     void Jump() 
     {
+        // Faz com que o personagem pule
         if(Input.GetButtonDown("Jump"))
         {
             if(!isJumping)
