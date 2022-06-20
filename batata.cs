@@ -7,7 +7,8 @@ public class batata : MonoBehaviour
     // Variavel para contolar a velocidade do personagem.
     public float Speed;
     public float JumpForce;
-    
+
+    // Para controlar o Pulo e o Pulo duplo.
     public bool isJumping;
     public bool doubleJump;
     
@@ -72,6 +73,7 @@ public class batata : MonoBehaviour
         }
     }
 
+    
     void OnCollisionEnter2D(Collision2D collision) 
     {
         if(collision.gameObject.layer == 8) 
